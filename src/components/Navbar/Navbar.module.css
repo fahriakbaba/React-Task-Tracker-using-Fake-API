@@ -1,0 +1,44 @@
+.container {
+    padding: 1.5rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, .7);
+}
+
+.title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--danger);
+    font-size: 1.5rem;
+}
+
+.icon {
+    width: 27px;
+    margin-right: 8px;
+    color: var(--danger);
+}
+
+.list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.list li {
+    padding: 4px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .5s
+}
+
+.link {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.link:hover {
+    color: var(--danger);
+}
