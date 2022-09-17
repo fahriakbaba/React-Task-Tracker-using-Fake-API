@@ -16,10 +16,7 @@ function AppProvider( {children} ) {
         setItems(data);
       }
     }
-      console.log("setItems: ", setItems);
-
-
-
+  
     return (<AppContext.Provider value={{
         items
     }}>{children}</AppContext.Provider>)
