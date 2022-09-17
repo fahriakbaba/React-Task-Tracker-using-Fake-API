@@ -25,7 +25,7 @@ function AppProvider( {children} ) {
         {
           text: "Wash a car",
           day: "Tuesday",
-          reminder: false,
+          reminder: true,
           id: 8,
         },
         {
@@ -42,6 +42,7 @@ function AppProvider( {children} ) {
         },
       ]);
 
+      console.log("setItems: ", setItems);
 
 
 

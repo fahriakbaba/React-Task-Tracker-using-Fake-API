@@ -1,0 +1,31 @@
+.listItem {
+    margin: 16px auto;
+    padding: 5px 12px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform .6s;
+}
+
+.listItem:hover {
+    transform: scale(1.03);
+}
+
+.borderLeft {
+    border-left: 4px solid green;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+    transition: all .6s;
+}
+
+.icon:hover {
+    color: var(--danger);
+    transform: scale(1.1);
+}

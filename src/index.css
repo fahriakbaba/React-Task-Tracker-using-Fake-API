@@ -17,6 +17,7 @@ body {
 :root {
   --danger: #b92632;
   --dark: rgb(0, 0, 0);
+  --space: 1.5px;
 }
 
 .container {

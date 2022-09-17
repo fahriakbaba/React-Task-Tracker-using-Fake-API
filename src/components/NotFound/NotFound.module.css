@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    color: var(--danger);
+    font-size: 6.5rem;
+    margin: 5rem auto 2rem auto;
+    letter-spacing: 5px;
+}
+
+.info {
+    color: var(--danger);
+    font-size: 1.5rem;
+    opacity: .7;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: var(--space);
+}
+
+.btn {
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 2px solid var(--danger);
+    background-color: white;
+    transition: all .6s;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: var(--danger);
+}
+
+.btn:hover .link {
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    letter-spacing: var(--space);
+    color: var(--danger);
+    transition: all .6s;
+    font-weight: 500;
+}

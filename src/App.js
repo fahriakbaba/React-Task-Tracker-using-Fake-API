@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import AddTask from "./pages/AddTask";
 import DeletedTask from "./pages/DeletedTask";
 import CompletedTask from "./pages/CompletedTask";
+import Error from "./pages/Error";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/add" element={<AddTask />} />
           <Route path="/delete" element={<DeletedTask />} />
           <Route path="/complete" element={<CompletedTask />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>
