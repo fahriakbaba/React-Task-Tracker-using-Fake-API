@@ -18,10 +18,13 @@ body {
   --danger: #b92632;
   --dark: rgb(0, 0, 0);
   --space: 1.5px;
+  --primary: #0275d8;
+  --success: #5cb85c;
 }
 
 .container {
    padding: 4rem 12rem;
 }
+
 
  

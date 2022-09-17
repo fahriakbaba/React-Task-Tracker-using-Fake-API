@@ -37,8 +37,11 @@
 .link {
     text-decoration: none;
     color: var(--dark);
+    padding: 5px;
 }
 
 .link:hover {
     color: var(--danger);
+    border-top: 2px solid var(--danger);
+    border-bottom: 2px solid var(--danger);
 }
