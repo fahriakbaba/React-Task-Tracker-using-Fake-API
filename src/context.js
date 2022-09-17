@@ -5,6 +5,17 @@ const AppContext = React.createContext();
 function AppProvider( {children} ) {
     const [items, setItems] = React.useState([]);
 
+    React.useEffect(() => {
+      getData();
+    }, [])
+
+    const getData = async() => {
+      const res = await fetch("http://localhost:3000/tasks");
+      const data = await res.json();
+      if(res.status === 200) {
+        setItems(data);
+      }
+    }
       console.log("setItems: ", setItems);
 
 
@@ -57,4 +68,9 @@ export {useGlobalContext, AppProvider};
     "id": 10
   }
 ]
+
+Start JSON Server
+json-server --watch db.json
+
 */
+
