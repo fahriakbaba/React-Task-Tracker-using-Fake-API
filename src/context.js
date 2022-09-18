@@ -4,11 +4,21 @@ const AppContext = React.createContext();
 
 function AppProvider({ children }) {
   const [items, setItems] = React.useState([]);
+  const [deletedTasks, setDeletedTasks] = React.useState(JSON.parse(localStorage.getItem("deletedTasks")) || []);
 
+  /* to save deletedTasks using window.localStorage */
+  React.useEffect(() => {
+    localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks))
+  }, [deletedTasks]);
+  /* localStorage.clear(); || clear localStorage */
+  console.log("deletedTasks: ",deletedTasks);
+
+  /* to get task when page load. */
   React.useEffect(() => {
     getData();
   }, [])
 
+  /* to get tasks by using native fetch() method */
   const getData = async () => {
     const res = await fetch("http://localhost:3000/tasks");
     const data = await res.json();
@@ -17,6 +27,7 @@ function AppProvider({ children }) {
     }
   }
 
+  /* to add task method */
   const addTask = async (task) => {
     const res = await fetch("http://localhost:3000/tasks", {
       method: 'POST',
@@ -29,12 +40,16 @@ function AppProvider({ children }) {
     setItems(prevItems => ([...prevItems, data]));
   };
 
+  /* to delete task method */
   const deleteTask = async (id) => {
     await fetch(`http://localhost:3000/tasks/${id}`, {
       method: 'DELETE',
     });
     setItems(prevItems => (prevItems.filter(item => item.id !== id)));
+    const deleted = items.filter(item => item.id === id);
+    setDeletedTasks(oldState => ([...oldState, ...deleted]));
   }
+
 
 
   return (<AppContext.Provider value={{
@@ -49,44 +64,6 @@ const useGlobalContext = () => React.useContext(AppContext);
 export { useGlobalContext, AppProvider };
 
 /*
-[
-  {
-    "text": "Clean House",
-    "day": "Saturday",
-    "reminder": true, 
-    "id": 5
-  },
-  {
-    "text": "Eat a fish",
-    "day": "Monday",
-    "reminder": false,
-    "id": 6
-  },
-  {
-    "text": "Shopping meal",
-    "day": "Monday",
-    "reminder": false,
-    "id": 7
-  },
-  {
-    "text": "Wash a car",
-    "day": "Tuesday",
-    "reminder": true,
-    "id": 8
-  },
-  {
-    "text": "Brush your teeth",
-    "day": "Everyday",
-    "reminder": false,
-    "id": 9
-  },
-  {
-    "text": "Go to the cinema ",
-    "day": "one day per a week",
-    "reminder": false,
-    "id": 10
-  }
-]
 
 How to start this project:
 1)Start JSON Server
