@@ -16,9 +16,21 @@ function AppProvider( {children} ) {
         setItems(data);
       }
     }
+
+    const addTask = async(task) => {
+      const res = await fetch("http://localhost:3000/tasks", {
+        method: 'POST',
+        body: JSON.stringify(task),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+      const data = await res.json();
+      setItems(prevItems => ([...prevItems, data]));
+    } 
   
     return (<AppContext.Provider value={{
-        items
+        items, addTask
     }}>{children}</AppContext.Provider>)
 }
 
@@ -66,8 +78,12 @@ export {useGlobalContext, AppProvider};
   }
 ]
 
-Start JSON Server
+How to start this project:
+1)Start JSON Server
 json-server --watch db.json
+2)Open new terminal
+cd task-tracker
+npm start
 
 */
 

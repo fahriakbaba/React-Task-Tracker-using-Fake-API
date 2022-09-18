@@ -20,11 +20,10 @@ body {
   --space: 1.5px;
   --primary: #0275d8;
   --success: #5cb85c;
+  --white: white;
 }
 
 .container {
    padding: 4rem 12rem;
 }
-
-
  
