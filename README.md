@@ -2,12 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### What did I use when I did this project?
+#### What did I use when I was making this project?
 1. Rest API (Fake API using JSON Server )
 2. React Router
 3. React Icon
 4. Context API
 5. React Form
+6. React Tabs
+7. React Accordion
 
 
 #### How to start this project:

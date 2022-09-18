@@ -21,6 +21,7 @@ body {
   --primary: #0275d8;
   --success: #5cb85c;
   --white: white;
+  --info: #5bc0de;
 }
 
 .container {

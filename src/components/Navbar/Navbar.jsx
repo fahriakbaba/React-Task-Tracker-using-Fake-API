@@ -28,7 +28,6 @@ const linksData = [
 
 function Navbar() {
   const [value, setValue] = React.useState(null);
-  console.log(value);
 
   return (
     <header className={styles.container}>
@@ -39,12 +38,9 @@ function Navbar() {
       <nav>
         <ul className={styles.list}>
           {linksData.map((link, index) => {
-            console.log("index: " , index);
-            console.log("value: ", value);
-
             return (
-              <li onClick={() => setValue(index)}>
-                <Link to={link.to} className={`${styles.link}`} key={index} style={{
+              <li key={index} onClick={() => setValue(index)}>
+                <Link to={link.to} className={`${styles.link}`} style={{
                   color: index===value && "#b92632"
                 }} >
                   {link.text}

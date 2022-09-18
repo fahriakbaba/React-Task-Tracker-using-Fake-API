@@ -11,9 +11,7 @@ function AppProvider({ children }) {
   React.useEffect(() => {
     localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks))
   }, [deletedTasks]);
-
-
-  console.log("deletedTasks: ",deletedTasks);
+  
 
   /* to get task when page load. */
   React.useEffect(() => {

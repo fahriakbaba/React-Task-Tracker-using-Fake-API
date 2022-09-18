@@ -1,0 +1,57 @@
+.item {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px auto;
+    font-size: .9rem;
+    padding: 8px 12px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform .6s;
+}
+
+.item:hover {
+    transform: scale(1.01);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .5px;
+    font-weight: 700;
+}
+
+.infoText {
+    margin: 4px 0;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .6s;
+}
+
+.icon:hover {
+    color: var(--danger);
+    transform: scale(1.1);
+}
+
+.accordionIcon {
+    color: var(--info);
+    margin-right: 9px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all .7s;
+}
+
+.accordionIcon:hover {
+    transform: scale(1.1);
+}
