@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { useGlobalContext } from "../context";
+import Complete from "../components/Complete/Complete";
 
 function CompletedTask() {
+  const { items } = useGlobalContext();
+  const completedTasks = items.filter(item => item.reminder===true);
+
   return (
-    <div>CompletedTask</div>
+    <main>
+      {completedTasks.map((item, index) => {
+        return(
+          <Complete key={index} completeItem={item} />
+        )
+      })}
+    </main>
   )
 }
 
