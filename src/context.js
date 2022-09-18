@@ -2,41 +2,51 @@ import React from "react";
 
 const AppContext = React.createContext();
 
-function AppProvider( {children} ) {
-    const [items, setItems] = React.useState([]);
+function AppProvider({ children }) {
+  const [items, setItems] = React.useState([]);
 
-    React.useEffect(() => {
-      getData();
-    }, [])
+  React.useEffect(() => {
+    getData();
+  }, [])
 
-    const getData = async() => {
-      const res = await fetch("http://localhost:3000/tasks");
-      const data = await res.json();
-      if(res.status === 200) {
-        setItems(data);
-      }
+  const getData = async () => {
+    const res = await fetch("http://localhost:3000/tasks");
+    const data = await res.json();
+    if (res.status === 200) {
+      setItems(data);
     }
+  }
 
-    const addTask = async(task) => {
-      const res = await fetch("http://localhost:3000/tasks", {
-        method: 'POST',
-        body: JSON.stringify(task),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      });
-      const data = await res.json();
-      setItems(prevItems => ([...prevItems, data]));
-    } 
-  
-    return (<AppContext.Provider value={{
-        items, addTask
-    }}>{children}</AppContext.Provider>)
+  const addTask = async (task) => {
+    const res = await fetch("http://localhost:3000/tasks", {
+      method: 'POST',
+      body: JSON.stringify(task),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const data = await res.json();
+    setItems(prevItems => ([...prevItems, data]));
+  };
+
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:3000/tasks/${id}`, {
+      method: 'DELETE',
+    });
+    setItems(prevItems => (prevItems.filter(item => item.id !== id)));
+  }
+
+
+  return (<AppContext.Provider value={{
+    items,
+    addTask,
+    deleteTask
+  }}>{children}</AppContext.Provider>)
 }
 
 
 const useGlobalContext = () => React.useContext(AppContext);
-export {useGlobalContext, AppProvider};
+export { useGlobalContext, AppProvider };
 
 /*
 [
