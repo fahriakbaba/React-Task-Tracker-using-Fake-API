@@ -8,7 +8,7 @@
 }
 
 .listItem:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
 }
 
 .borderLeft {
@@ -33,3 +33,8 @@
     color: var(--danger);
     transform: scale(1.1);
 }
+
+.textCSS {
+    opacity: .6;
+    text-decoration: line-through;
+} 

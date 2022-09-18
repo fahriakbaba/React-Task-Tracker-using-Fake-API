@@ -6,11 +6,13 @@ function AppProvider({ children }) {
   const [items, setItems] = React.useState([]);
   const [deletedTasks, setDeletedTasks] = React.useState(JSON.parse(localStorage.getItem("deletedTasks")) || []);
 
-  /* to save deletedTasks using window.localStorage */
+  /* to save deletedTasks using window.localStorage */ 
+  /* localStorage.clear(); || clear localStorage */
   React.useEffect(() => {
     localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks))
   }, [deletedTasks]);
-  /* localStorage.clear(); || clear localStorage */
+
+
   console.log("deletedTasks: ",deletedTasks);
 
   /* to get task when page load. */
@@ -48,14 +50,35 @@ function AppProvider({ children }) {
     setItems(prevItems => (prevItems.filter(item => item.id !== id)));
     const deleted = items.filter(item => item.id === id);
     setDeletedTasks(oldState => ([...oldState, ...deleted]));
-  }
+  };
 
+  /* to update task method */
+  const updateTask = async(id) => {
+    const getResponse = await fetch(`http://localhost:3000/tasks/${id}`);
+    const getData = await getResponse.json();
+    const updatedData = {...getData, reminder: !getData.reminder};
 
+    const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedData),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const data = await res.json();
+    /* to change reimnder property on UI */
+    setItems(oldState => {
+      return oldState.map(item => item.id === id ? {...item, reminder: data.reminder} : item)
+    })
+  };
 
   return (<AppContext.Provider value={{
     items,
+    deletedTasks,
+    setDeletedTasks,
     addTask,
-    deleteTask
+    deleteTask,
+    updateTask
   }}>{children}</AppContext.Provider>)
 }
 

@@ -4,15 +4,25 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { useGlobalContext } from "../../context";
 
 function Task({ task }) {
-  const { deleteTask } = useGlobalContext();
+  const { deleteTask, updateTask } = useGlobalContext();
+
+  const handleToggle = () => {
+    updateTask(task.id);
+  };
 
   return (
-    <li className={`${task.reminder && styles.borderLeft} ${styles.listItem}`}>
+    <li
+      onDoubleClick={handleToggle}
+      className={`${task.reminder && styles.borderLeft} ${styles.listItem}`}
+    >
       <h3 className={styles.title}>
-        {task.text}
-        <RiDeleteBinLine className={styles.icon} onClick={() => deleteTask(task.id)} />
+        <span className={`${task.reminder && styles.textCSS}`}>{task.text}</span>
+        <RiDeleteBinLine
+          className={styles.icon}
+          onClick={() => deleteTask(task.id)}
+        />
       </h3>
-      <p>{task.day}</p>
+      <p className={`${task.reminder && styles.textCSS}`}>{task.day}</p>
     </li>
   );
 }
