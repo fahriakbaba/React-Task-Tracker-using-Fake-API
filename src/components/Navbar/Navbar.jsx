@@ -24,6 +24,11 @@ const linksData = [
     to: "/complete",
     text: "Completed Task",
   },
+  {
+    id: 5,
+    to: "/about",
+    text: "About",
+  }
 ];
 
 function Navbar() {

@@ -11,6 +11,7 @@ import DeletedTask from "./pages/DeletedTask";
 import CompletedTask from "./pages/CompletedTask";
 import Error from "./pages/Error";
 import Footer from "./components/Footer/Footer";
+import About from "./pages/About";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/add" element={<AddTask />} />
           <Route path="/delete" element={<DeletedTask />} />
           <Route path="/complete" element={<CompletedTask />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
