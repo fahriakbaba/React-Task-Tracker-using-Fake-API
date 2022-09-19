@@ -10,6 +10,7 @@ import AddTask from "./pages/AddTask";
 import DeletedTask from "./pages/DeletedTask";
 import CompletedTask from "./pages/CompletedTask";
 import Error from "./pages/Error";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

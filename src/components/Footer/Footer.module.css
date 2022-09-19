@@ -1,0 +1,16 @@
+.footer {
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: var(--white);
+    text-align: center;
+    height: 50px;
+    padding: 12px 24px;
+    box-shadow: -1px -1px 7px rgba(0, 0, 0, .7);
+    position: fixed;
+    bottom: 0;
+}
+
+.text {
+    color: var(--danger);
+    font-weight: 600;
+}

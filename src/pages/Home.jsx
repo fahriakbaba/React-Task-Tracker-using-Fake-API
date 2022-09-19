@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main>
-      <SearchTask handleSearch={handleSearch} search={search} />
+      {(items.length>0) && (<SearchTask handleSearch={handleSearch} search={search} />)}
       <ul>
         <Tasks
           tasks={filterItems}

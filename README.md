@@ -10,6 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 5. React Form
 6. React Tabs
 7. React Accordion
+8. React Filter Search
 
 
 #### How to start this project:

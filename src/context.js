@@ -93,5 +93,11 @@ json-server --watch db.json
 cd task-tracker
 npm start
 
+
+about page
+footer
+pop up 
+toggle
+
 */
 
