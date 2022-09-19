@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Image](./public/images/taskmain.png)
+![Image](./public/images/taskadd.png)
+![Image](./public/images/taskcompleted.png)
+![Image](./public/images/taskabout.png)
 
 #### What did I use when I was making this project?
 1. Rest API (Fake API using JSON Server )
