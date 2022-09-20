@@ -23,7 +23,7 @@ function AddTaskForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if( (!formData.text) || (!formData.day)) {
-      alert("popup info");
+      alert("Please, enter task and day");
       return;
     }
     addTask(formData);
