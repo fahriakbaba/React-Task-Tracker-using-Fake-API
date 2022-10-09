@@ -19,8 +19,53 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 #### How to start this project:
-1. `Start JSON Server`
+1. firstly open new terminal and  you should write `cd .\React-Task-Tracker-using-Fake-API-main\` after that `npm install`  
+2. `Start JSON Server`
+   - `cd .\React-Task-Tracker-using-Fake-API-main\`
    - `json-server --watch db.json`
-2. `Open new terminal`
+   - after that you must write inside db.json file following data:
+   `
+   {
+  "tasks":[
+    {
+      "text": "Clean House",
+      "day": "Saturday",
+      "reminder": true, 
+      "id": 5
+    },
+    {
+      "text": "Eat a fish",
+      "day": "Monday",
+      "reminder": false,
+      "id": 6
+    },
+    {
+      "text": "Shopping meal",
+      "day": "Monday",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "Wash a car",
+      "day": "Tuesday",
+      "reminder": true,
+      "id": 8
+    },
+    {
+      "text": "Brush your teeth",
+      "day": "Everyday",
+      "reminder": false,
+      "id": 9
+    },
+    {
+      "text": "Go to the cinema ",
+      "day": "one day per a week",
+      "reminder": false,
+      "id": 10
+    }
+  ]
+}
+   */
+3. `Open new terminal`
    - `cd task-tracker`
    - `npm start `
