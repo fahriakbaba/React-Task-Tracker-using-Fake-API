@@ -24,8 +24,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
    - `cd .\React-Task-Tracker-using-Fake-API-main\`
    - `json-server --watch db.json`
    - after that you must write inside db.json file following data:
-   `
-   {
+   
+   `{
   "tasks":[
     {
       "text": "Clean House",
@@ -64,8 +64,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "id": 10
     }
   ]
-}
-   */
+}`
 3. `Open new terminal`
    - `cd task-tracker`
    - `npm start `
