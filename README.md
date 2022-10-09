@@ -21,7 +21,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### How to start this project:
 1. firstly open new terminal and  you should write `cd .\React-Task-Tracker-using-Fake-API-main\` after that `npm install`  
 2. `Start JSON Server`
-   - `cd .\React-Task-Tracker-using-Fake-API-main\`
    - `json-server --watch db.json`
    - after that you must write inside db.json file following data:
    
@@ -66,5 +65,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ]
 }`
 3. `Open new terminal`
-   - `cd task-tracker`
+   - `cd .\React-Task-Tracker-using-Fake-API-main\`
    - `npm start `
